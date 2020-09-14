@@ -4,5 +4,11 @@
 
 /* Your own custom component styles */
 
+.btn-primary {
+    @apply border px-2;
+    border-color: #a88734 #9c7e31 #846a29;
+    background-color: #f0c14b;
+}
+
 /* purgecss end ignore */
 @import 'tailwindcss/utilities';

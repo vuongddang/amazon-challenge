@@ -2056,6 +2056,14 @@ video {
 
 /* Your own custom component styles */
 
+.btn-primary {
+  border-width: 1px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-color: #a88734 #9c7e31 #846a29;
+  background-color: #f0c14b;
+}
+
 /* purgecss end ignore */
 
 .space-y-0 > :not(template) ~ :not(template) {
