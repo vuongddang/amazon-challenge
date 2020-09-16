@@ -2,7 +2,11 @@ import React from 'react'
 import SearchIcon from '@material-ui/icons/Search'
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket'
 import { Link } from 'react-router-dom'
+import { useStateValue } from '../StateProvider'
 function Header() {
+
+    const [{ basket }] = useStateValue();
+
     return (
         <div className="flex  items-center h-12 bg-gray-900 sticky">
             <Link to="/">
@@ -28,7 +32,7 @@ function Header() {
             </div>
             <Link to="/checkout" className="flex items-center text-white mx-2">
                 <ShoppingBasketIcon className="mx-2" />
-                <span className="text-xs font-extrabold text-white">0</span>
+    <span className="text-xs font-extrabold text-white">{basket.length}</span>
             </Link>
         </div>
     )
