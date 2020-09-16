@@ -4,7 +4,7 @@ export const initialState = {
     basket: [
         {
             id: "1",
-            title: "Hape Pound & Tap Bench with Slide Out Xylophone - …ding Toy for Toddlers, Multifunctional and Bright", 
+            title: "Hape Pound & Tap Bench with Slide Out Xylophone - …ding Toy for Toddlers, Multifunctional and Bright",
             image: "https://images-na.ssl-images-amazon.com/images/I/61HyZoM8ZqL._AC_SL1171_.jpg",
             price: 25.62,
             rating: 5,
@@ -12,6 +12,9 @@ export const initialState = {
     ],
     //...
 }
+
+// amount starts from 0
+export const getBasketTotal = (basket) => basket?.reduce((amount, item) => item.price + amount, 0);
 
 function reducer(state, action) {
     console.log(action)
@@ -24,7 +27,7 @@ function reducer(state, action) {
         case REMOVE_FROM_BASKET:
             const newBasket = [...state.basket]
             const index = newBasket.findIndex(item => item.id === action.item.id);
-            if(index >=0 ) {
+            if (index >= 0) {
                 newBasket.splice(index, 1);
             }
             return {
